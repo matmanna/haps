@@ -1,0 +1,17 @@
+{
+  "name": "Lobsters Development",
+  "dockerFile": "Dockerfile.dev",
+  "context": "..",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "runArgs": [
+    "--service-ports"
+  ],
+  "postCreateCommand": "make docker-serve",
+  "portsAttributes": {
+    "3000": {
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
